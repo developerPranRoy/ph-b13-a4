@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+    <!-- Dashboard -->
+    <h1 class="font-bold text-4xl p-2 bg-slate-200">Job Tracker Dashboard </h1>
+    <header class="flex gap-6 justify-around mb-6">
+
+        <div class="bg-white w-32 rounded text-center border">
+            <h2 class="font-bold">All</h2>
+            <p id="all">0</p>
+        </div>
+        <div class="bg-green-300 w-32 rounded text-center border">
+            <h2 class="font-bold">Interview</h2>
+            <p id="interview">0</p>
+        </div>
+        <div class="bg-red-300 w-32 rounded text-center border">
+            <h2 class="font-bold">Rejected</h2>
+            <p id="rejected">0</p>
+        </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="flex gap-4 mb-4">
+        <button id="btn-all" class="px-4 py-2 text-white rounded">All</button>
+        <button id="btn-interview" class="px-4 py-2 text-white rounded">Interview</button>
+        <button id="btn-rejected" class="px-4 py-2  text-white rounded">Rejected</button>
+    </div>
+
+    <!-- No Job Message -->
+    <div id="no-job" class="hidden text-center mb-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" class="w-16 mx-auto mb-2">
+        <h2 class="font-bold text-xl">No Jobs Available</h2>
+        <p class="text-gray-500">There are no jobs in this section</p>
+    </div>
+
+    <!-- Job Cards -->
+    <section id="cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- Card Template -->
+        <div class="job-card bg-white p-4 rounded shadow" data-status="none">
+            <h2 class="font-bold text-lg">Frontend Developer</h2>
+            <p>Company: Google</p>
+            <p>Location: Dhaka | Type: Full Time | Salary: 80k BDT</p>
+            <p class="text-gray-600">Build modern web applications using React.</p>
+            <p class="status text-gray-500 mt-1">Status: None</p>
+            <div class="flex gap-2 mt-2">
+                <button class="btn-interview px-3 py-1 bg-green-300 rounded">Interview</button>
+                <button class="btn-rejected px-3 py-1 bg-red-300 rounded">Rejected</button>
+                <button class="btn-delete px-3 py-1 bg-gray-400 rounded ml-auto">Delete</button>
+            </div>
+        </div>
+
+        <div class="job-card bg-white p-4 rounded shadow" data-status="none">
+            <h2 class="font-bold text-lg">Backend Developer</h2>
+            <p>Company: Facebook</p>
+            <p>Location: Dhaka | Type: Full Time | Salary: 90k BDT</p>
+            <p class="text-gray-600">Work on server-side logic and database management.</p>
+            <p class="status text-gray-500 mt-1">Status: None</p>
+            <div class="flex gap-2 mt-2">
+                <button class="btn-interview px-3 py-1 bg-green-300 rounded">Interview</button>
+                <button class="btn-rejected px-3 py-1 bg-red-300 rounded">Rejected</button>
+                <button class="btn-delete px-3 py-1 bg-gray-400 rounded ml-auto">Delete</button>
+            </div>
+        </div>
+
+        <div class="job-card bg-white p-4 rounded shadow" data-status="none">
+            <h2 class="font-bold text-lg">Full Stack Developer</h2>
+            <p>Company: Amazon</p>
+            <p>Location: Chittagong | Type: Full Time | Salary: 100k BDT</p>
+            <p class="text-gray-600">Develop both frontend and backend of web apps.</p>
+            <p class="status text-gray-500 mt-1">Status: None</p>
+            <div class="flex gap-2 mt-2">
+                <button class="btn-interview px-3 py-1 bg-green-300 rounded">Interview</button>
+                <button class="btn-rejected px-3 py-1 bg-red-300 rounded">Rejected</button>
+                <button class="btn-delete px-3 py-1 bg-gray-400 rounded ml-auto">Delete</button>
+            </div>
+        </div>
+
+        <div class="job-card bg-white p-4 rounded shadow" data-status="none">
+            <h2 class="font-bold text-lg">UI Designer</h2>
+            <p>Company: Apple</p>
+            <p>Location: Dhaka | Type: Part Time | Salary: 60k BDT</p>
+            <p class="text-gray-600">Design beautiful user interfaces.</p>
+            <p class="status text-gray-500 mt-1">Status: None</p>
+            <div class="flex gap-2 mt-2">
+                <button class="btn-interview px-3 py-1 bg-green-300 rounded">Interview</button>
+                <button class="btn-rejected px-3 py-1 bg-red-300 rounded">Rejected</button>
+                <button class="btn-delete px-3 py-1 bg-gray-400 rounded ml-auto">Delete</button>
+            </div>
+        </div>
+
+        <div class="job-card bg-white p-4 rounded shadow" data-status="none">
+            <h2 class="font-bold text-lg">QA Engineer</h2>
+            <p>Company: Tesla</p>
+            <p>Location: Dhaka | Type: Full Time | Salary: 70k BDT</p>
+            <p class="text-gray-600">Test software for quality assurance.</p>
+            <p class="status text-gray-500 mt-1">Status: None</p>
+            <div class="flex gap-2 mt-2">
+                <button class="btn-interview px-3 py-1 bg-green-300 rounded">Interview</button>
+                <button class="btn-rejected px-3 py-1 bg-red-300 rounded">Rejected</button>
+                <button class="btn-delete px-3 py-1 bg-gray-400 rounded ml-auto">Delete</button>
+            </div>
+        </div>
+
+        <div class="job-card bg-white p-4 rounded shadow" data-status="none">
+            <h2 class="font-bold text-lg">DevOps Engineer</h2>
+            <p>Company: Microsoft</p>
+            <p>Location: Sylhet | Type: Full Time | Salary: 110k BDT</p>
+            <p class="text-gray-600">Manage deployment pipelines.</p>
+            <p class="status text-gray-500 mt-1">Status: None</p>
+            <div class="flex gap-2 mt-2">
+                <button class="btn-interview px-3 py-1 bg-green-300 rounded">Interview</button>
+                <button class="btn-rejected px-3 py-1 bg-red-300 rounded">Rejected</button>
+                <button class="btn-delete px-3 py-1 bg-gray-400 rounded ml-auto">Delete</button>
+            </div>
+        </div>
+
+        <div class="job-card bg-white p-4 rounded shadow" data-status="none">
+            <h2 class="font-bold text-lg">Mobile Developer</h2>
+            <p>Company: Uber</p>
+            <p>Location: Dhaka | Type: Full Time | Salary: 95k BDT</p>
+            <p class="text-gray-600">Develop mobile applications.</p>
+            <p class="status text-gray-500 mt-1">Status: None</p>
+            <div class="flex gap-2 mt-2">
+                <button class="btn-interview px-3 py-1 bg-green-300 rounded">Interview</button>
+                <button class="btn-rejected px-3 py-1 bg-red-300 rounded">Rejected</button>
+                <button class="btn-delete px-3 py-1 bg-gray-400 rounded ml-auto">Delete</button>
+            </div>
+        </div>
+
+        <div class="job-card bg-white p-4 rounded shadow" data-status="none">
+            <h2 class="font-bold text-lg">Software Engineer</h2>
+            <p>Company: Netflix</p>
+            <p>Location: Dhaka | Type: Full Time | Salary: 105k BDT</p>
+            <p class="text-gray-600">Develop software solutions.</p>
+            <p class="status text-gray-500 mt-1">Status: None</p>
+            <div class="flex gap-2 mt-2">
+                <button class="btn-interview px-3 py-1 bg-green-300 rounded">Interview</button>
+                <button class="btn-rejected px-3 py-1 bg-red-300 rounded">Rejected</button>
+                <button class="btn-delete px-3 py-1 bg-gray-400 rounded ml-auto">Delete</button>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
